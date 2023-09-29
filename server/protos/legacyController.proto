@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package legacyController;
+import "google/protobuf/any.proto";
+service Output {
+  rpc getUsers (UserParams) returns (Response) {}
+}
+
+message UserParams {
+  string sort = 1;
+}
+
+message Response {
+  string data = 1;
+  bool parse = 2;
+}
